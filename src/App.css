@@ -1,3 +1,53 @@
 body {
   text-align: center;
 }
+
+#todos {
+  width: 35rem;
+  max-width: 90%;
+  margin: 3rem auto;
+}
+
+#form {
+  width: 30rem;
+  max-width: 90%;
+  margin: 3rem auto;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+
+.form-control input {
+  width: 80%;
+  min-height: 50px;
+  border: 1px solid #ccc;
+  font: inherit;
+  line-height: 2rem;
+  padding: 0 0.25rem;
+  margin-right: 8px;
+}
+
+.form-control button {
+  min-height: 50px;
+  width: 50px;
+  border-radius: 30%;
+  border-color: transparent;
+  background-color: #1d4174;
+  color: #fff;
+  font-size: 15px;
+  padding-bottom: 6px;
+  border-width: 0;
+  cursor: pointer;
+}
+
+.todo-item {
+  margin: 1rem 0;
+  background: #1d4174;
+  color: white;
+  padding: 1.3rem 2rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,7 +1,13 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../redux/itemSlice";
+
+
 
 function TodoForm() {
   const [value, setValue] = useState("");
+
+  const dispatch = useDispatch();
 
   function changeHandler(event) {
     setValue(event.target.value);
@@ -9,11 +15,16 @@ function TodoForm() {
 
   function submitHandler(event) {
     event.preventDefault();
-    console.log("Done");
+    dispatch(
+        addItem({
+          title: value,
+        })
+      );
     setValue("");
   }
   return (
     <form onSubmit={submitHandler}>
+     <div className="form-control">
       <input
         type="name"
         placeholder="Add a todo"
@@ -21,6 +32,7 @@ function TodoForm() {
         onChange={changeHandler}
       />
       <button type="submit">Add</button>
+      </div>
     </form>
   );
 }

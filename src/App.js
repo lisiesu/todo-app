@@ -5,11 +5,15 @@ import ItemsLeft from "./components/ItemsLeft";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Todo List</h1>
-      <TodoForm />
-      <TodoList />
-      <ItemsLeft />
+    <div>
+      <section id="form">
+        <h1>Todo List</h1>
+        <TodoForm />
+      </section>
+      <section id="todos">
+        <TodoList />
+        <ItemsLeft />
+      </section>
     </div>
   );
 }
