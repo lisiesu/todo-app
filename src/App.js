@@ -13,10 +13,19 @@ function App() {
   if (todos.length > 0) {
     content = <TodoList />;
   }
+
+  const today = new Date().toLocaleDateString("en-UK", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+  });
+
   return (
     <div>
       <section id="form">
-        <h1>Todo List</h1>
+        <div className="box" id="heading">
+          <h1>{today}</h1>
+        </div>
         <TodoForm />
       </section>
       <section id="todos">

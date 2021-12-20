@@ -62,7 +62,7 @@ input[type="checkbox"] {
 }
 
 .item-done {
-  text-decoration: line-through ;
+  text-decoration: line-through;
 }
 
 .todo-item button {
@@ -81,4 +81,23 @@ input[type="checkbox"] {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+/* DATE HEADING STYLES */
+
+.box {
+  max-width: 400px;
+  margin: 25px auto;
+  background: white;
+  border-radius: 5px;
+}
+
+.box h1 {
+  color: #fff;
+  padding: 10px;
+}
+
+#heading {
+  background-color: #1d4174;
+  text-align: center;
 }
