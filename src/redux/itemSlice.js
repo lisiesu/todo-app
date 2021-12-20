@@ -10,7 +10,10 @@ const itemSlice = createSlice({
         title: action.payload.title,
         done: false,
       };
-      state.push(newItem);
+      let index = state.findIndex((el) => el.title === action.payload.title);
+      if (index === -1) {
+        state.push(newItem);
+      }
     },
     deleteItem: (state, action) => {
       return state.filter((todo) => todo.id !== action.payload.id);

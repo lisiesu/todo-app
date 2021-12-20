@@ -13,6 +13,9 @@ function TodoForm() {
 
   function submitHandler(event) {
     event.preventDefault();
+    if (value.trim().length === 0) {
+      return;
+    }
     dispatch(
       addItem({
         title: value,
@@ -20,6 +23,7 @@ function TodoForm() {
     );
     setValue("");
   }
+
   return (
     <form onSubmit={submitHandler}>
       <div className="form-control">
