@@ -2,9 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const itemSlice = createSlice({
   name: "todos",
-  initialState: [
-      {id:1, title:"First todo", done: false}
-  ],
+  initialState: [],
   reducers: {
     addItem: (state, action) => {
       const newItem = {
@@ -15,10 +13,14 @@ const itemSlice = createSlice({
       state.push(newItem);
     },
     deleteItem: (state, action) => {
-      return state.filter((todo)=> todo.id !== action.payload.id)
-  },
+      return state.filter((todo) => todo.id !== action.payload.id);
+    },
+    toggleDone: (state, action) => {
+      const index = state.findIndex((todo) => todo.id === action.payload.id);
+      state[index].done = action.payload.done;
+    },
   },
 });
 
-export const { addItem, deleteItem } = itemSlice.actions;
+export const { addItem, deleteItem, toggleDone } = itemSlice.actions;
 export default itemSlice.reducer;
