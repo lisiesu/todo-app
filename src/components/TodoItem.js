@@ -14,8 +14,10 @@ function TodoItem({ id, title, done }) {
 
   return (
     <li className="todo-item">
-      <input type="checkbox" checked={done} onClick={handleToggle} />
-      {title}
+      <div className={done && "item-done"}>
+        <input type="checkbox" checked={done} onClick={handleToggle} />
+        {title}
+      </div>
       <button onClick={handleDelete}>Delete</button>
     </li>
   );
