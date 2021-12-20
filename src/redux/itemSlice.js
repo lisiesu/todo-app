@@ -14,8 +14,11 @@ const itemSlice = createSlice({
       };
       state.push(newItem);
     },
+    deleteItem: (state, action) => {
+      return state.filter((todo)=> todo.id !== action.payload.id)
+  },
   },
 });
 
-export const { addItem } = itemSlice.actions;
+export const { addItem, deleteItem } = itemSlice.actions;
 export default itemSlice.reducer;
